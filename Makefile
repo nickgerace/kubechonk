@@ -25,7 +25,7 @@ uninstall:
 test-release:
 	cd $(MAKEPATH); goreleaser --snapshot --skip-publish --rm-dist
 
-release:
+release: test-release
 	cd $(MAKEPATH); git tag -a $(TAG) -m "Release $(TAG)"
 	cd $(MAKEPATH); git push origin $(TAG)
 

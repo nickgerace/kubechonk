@@ -13,15 +13,14 @@ builds:
   goarch:
     - amd64
 archives:
+- id: kubechonk-archive
   name_template: |-
-    kubechonk-{{ .Tag }}_{{ .Os }}_{{ .Arch -}}
+      kubechonk-{{ .Tag }}-{{ .Os }}-{{ .Arch -}}
   format_overrides:
     - goos: windows
       format: zip
 checksum:
   name_template: 'checksums.txt'
   algorithm: sha256
-snapshot:
-  name_template: "{{ .Tag }}-next"
 changelog:
   sort: asc
