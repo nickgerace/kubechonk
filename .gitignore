@@ -1,3 +1,4 @@
+# Default
 *.exe
 *.exe~
 *.dll
@@ -6,5 +7,8 @@
 *.test
 *.out
 vendor/
+
+# Custom
 kubectl-chonk
 kubechonk
+dist/
