@@ -1,4 +1,4 @@
-name: Go
+name: Build
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    name: Build
+    name: Go build and test
     runs-on: ubuntu-latest
     steps:
 
@@ -31,7 +31,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v .
+      run: go build cmd/kubectl-chonk.go
 
     - name: Test
-      run: go test -v .
+      run: go test -v ./...
