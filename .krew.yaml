@@ -11,28 +11,19 @@ spec:
   platforms:
   - selector:
       matchLabels:
-        os: darwin
-        arch: amd64
-    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-darwin-amd64.tar.gz" .TagName }}
-    files:
-    - from: "*"
-      to: "."
-    bin: kubectl-chonk
-  - selector:
-      matchLabels:
         os: linux
         arch: amd64
     {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-linux-amd64.tar.gz" .TagName }}
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-chonk
-  - selector:
-      matchLabels:
+  - selector:	
+      matchLabels:	
+        os: darwin	
+        arch: amd64	
+    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-darwin-amd64.tar.gz" .TagName }}	
+    bin: kubectl-chonk
+  - selector:	
+      matchLabels:	
         os: windows
-        arch: amd64
-    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-windows-amd64.zip" .TagName }}
-    files:
-    - from: "*"
-      to: "."
-      bin: kubectl-chonk.exe
+        arch: amd64	
+    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-windows-amd64.zip" .TagName }}	
+    bin: kubectl-chonk.exe

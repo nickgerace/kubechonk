@@ -21,27 +21,12 @@ kind-control-plane      mem             12911996Ki
 
 ## Installation
 
-You can change the install destination in the Makefile, or use the default.
-
-```bash
-git clone https://github.com/nickgerace/kubechonk.git
-cd kubechonk
-make build
-sudo make install
-```
-
-Note: the default location is ```/usr/local/bin/kubectl-chonk```.
+Download the [latest GitHub release](https://github.com/nickgerace/kubechonk/releases/latest) for your operating system and architecture.
+Move the binary to your ```PATH``` to get started.
 
 ## Uninstallation
 
-Remove the binary to fully uninstall the plugin.
-If you installed to destination different the default, you may have to manually remove the binary.
-
-```bash
-sudo make uninstall
-```
-
-Note: the default location is ```/usr/local/bin/kubectl-chonk```.
+Delete the binary from your ```PATH``` to completely uninstall the plugin.
 
 ## Credits
 
