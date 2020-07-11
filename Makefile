@@ -28,4 +28,3 @@ test-release:
 release:
 	cd $(MAKEPATH); git tag -a $(TAG)
 	cd $(MAKEPATH); git push origin $(TAG)
-	cd $(MAKEPATH); goreleaser
