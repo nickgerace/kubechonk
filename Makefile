@@ -29,5 +29,5 @@ release: test-release
 	cd $(MAKEPATH); git tag -a $(TAG) -m "Release $(TAG)"
 	cd $(MAKEPATH); git push origin $(TAG)
 
-test-krew:
-	kubectl krew install --manifest=$(MAKEPATH)/.krew.yaml -v 4
+test-krew: test-release
+	kubectl krew install --manifest=$(MAKEPATH)/.krew.yaml --archive=$(MAKEPATH)/dist/kubechonk-$(TAG)-linux-amd64.tar.gz -v=4

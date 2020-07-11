@@ -52,8 +52,8 @@ func NewCmdChonk(streams genericclioptions.IOStreams) *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:          "chonk [flags]",
-		Short:        "Display the chonker nodes",
-		Example:      "kubectl chonk",
+		Short:        "Finds and displays the node(s) with most CPU cores, and node(s) with the largest memory sizes.",
+		Example:      "  kubectl chonk",
 		SilenceUsage: true,
 		RunE: func(c *cobra.Command, args []string) error {
 			if err := o.Validate(); err != nil {
