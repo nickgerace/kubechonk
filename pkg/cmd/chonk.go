@@ -16,13 +16,13 @@ import (
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 
+	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
 	"k8s.io/client-go/kubernetes"
-	_ "k8s.io/client-go/plugin/pkg/client/auth"
 	"k8s.io/client-go/tools/clientcmd"
 
-	"k8s.io/apimachinery/pkg/api/resource"
+	_ "k8s.io/client-go/plugin/pkg/client/auth" // Required for GKE and other vendors.
 )
 
 // ChonkerLists keeps track of all "chonkers" for each resource type.
