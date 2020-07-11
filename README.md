@@ -1,2 +1,3 @@
 # kubechonk
-Finds the "chonkiest" nodes with this kubectl plugin.
+
+Find the "chonkiest" nodes with this kubectl plugin.
