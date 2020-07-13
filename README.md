@@ -14,19 +14,37 @@ The ```chonk``` command returns all the node(s) with the highest number of CPU c
 ```bash
 [user@hostname:~]
 % kubectl chonk
-NODE                    RESOURCE        VALUE
-kind-control-plane      cpu             8
-kind-control-plane      mem             12911996Ki
+NODE                         RESOURCE   VALUE
+gke-cluster-cpu2mem1-alpha   cpu        2
+gke-cluster-cpu2mem1-beta    cpu        2
+gke-cluster-cpu1mem3-alpha   memory     3785940Ki
+gke-cluster-cpu1mem3-beta    memory     3785940Ki
 ```
 
-## Installation
+## Getting Started
+
+You can install (and uninstall) this plugin by using [krew](https://krew.sigs.k8s.io/), or by downloading the binary manually.
+
+### Krew
+
+Clone this repository and run the following.
+
+```bash
+kubectl krew install --manifest=.krew.yaml
+```
+
+You can uninstall the plugin with ```krew``` as well.
+
+```bash
+kubectl krew uninstall chonk
+```
+
+### Manual
 
 Download the [latest GitHub release](https://github.com/nickgerace/kubechonk/releases/latest) for your operating system and architecture.
 Move the binary to your ```PATH``` to get started.
 
-## Uninstallation
-
-Delete the binary from your ```PATH``` to completely uninstall the plugin.
+To completely uninstall the plugin, delete the binary from your ```PATH```.
 
 ## Credits
 
