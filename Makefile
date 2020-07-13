@@ -1,6 +1,6 @@
 MAKEPATH:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NAME:=kubectl-chonk
-TAG:=v0.1.0
+TAG:=v0.1.1
 
 build: fmt-and-vet test
 	cd $(MAKEPATH); go build cmd/$(NAME).go
