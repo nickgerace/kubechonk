@@ -117,9 +117,9 @@ func (o *ChonkOptions) Run() error {
 		switch compareWrapper(memMaxValue, memTempValue) {
 		case -1:
 			memMaxValue = memTempValue
-			chonkerLists.memList = append([][]string{}, buildChonker(node.Name, "mem", memTempValue))
+			chonkerLists.memList = append([][]string{}, buildChonker(node.Name, "memory", memTempValue))
 		case 0:
-			chonkerLists.memList = append(chonkerLists.memList, buildChonker(node.Name, "mem", memTempValue))
+			chonkerLists.memList = append(chonkerLists.memList, buildChonker(node.Name, "memory", memTempValue))
 		}
 	}
 
@@ -128,6 +128,7 @@ func (o *ChonkOptions) Run() error {
 	// https://pkg.go.dev/k8s.io/apimachinery/pkg/api/resource?tab=doc#CanonicalValue
 	// https://github.com/kubernetes/apimachinery/blob/v0.18.5/pkg/api/resource/quantity.go
 	// https://github.com/kubernetes/apimachinery/blob/v0.18.5/pkg/api/resource/amount.go
+	// The table padding is three spaces, which matches standard kubectl output.
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetHeader([]string{"Node", "Resource", "Value"})
 	table.SetAutoWrapText(false)
@@ -139,7 +140,7 @@ func (o *ChonkOptions) Run() error {
 	table.SetRowSeparator("")
 	table.SetHeaderLine(false)
 	table.SetBorder(false)
-	table.SetTablePadding("\t")
+	table.SetTablePadding("   ")
 	table.SetNoWhiteSpace(true)
 	table.AppendBulk(append(chonkerLists.cpuList, chonkerLists.memList...))
 	table.Render()

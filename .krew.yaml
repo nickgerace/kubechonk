@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: chonk
 spec:
-  version: {{ .TagName }}
+  version: v0.1.0
   homepage: https://github.com/nickgerace/kubechonk
   shortDescription: Find the chonkiest nodes with this kubectl plugin.
   description: |
@@ -13,17 +13,20 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-linux-amd64.tar.gz" .TagName }}
+    uri: https://github.com/nickgerace/kubechonk/releases/download/v0.1.0/kubechonk-v0.1.0-linux-amd64.tar.gz
+    sha256: 1f0798cf4abf5f7cf2254112af0c5dbae1f477c27d4b92425e7c6c68b10f6b75
     bin: kubectl-chonk
   - selector:	
       matchLabels:	
         os: darwin	
         arch: amd64	
-    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-darwin-amd64.tar.gz" .TagName }}	
+    uri: https://github.com/nickgerace/kubechonk/releases/download/v0.1.0/kubechonk-v0.1.0-darwin-amd64.tar.gz
+    sha256: badcaffacb89b188d3c19aad2d2e1d34a06adf11948c41eb9489c95f1940b5f6
     bin: kubectl-chonk
   - selector:	
       matchLabels:	
         os: windows
         arch: amd64	
-    {{addURIAndSha "https://github.com/nickgerace/kubechonk/releases/download/{{ .TagName }}/kubechonk-{{ .TagName }}-windows-amd64.zip" .TagName }}	
+    uri: https://github.com/nickgerace/kubechonk/releases/download/v0.1.0/kubechonk-v0.1.0-windows-amd64.zip
+    sha256: ebee1b808c843a9321c0a70bf0f185e1e33315c8d2e17e8b36406a9a808cca44
     bin: kubectl-chonk.exe
